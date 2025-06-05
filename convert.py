@@ -88,5 +88,5 @@ if __name__ == "__main__":
 
     inp = " ".join(sys.argv[1:])
     result = human_limit_to_bucket(inp)
-    rate_str = f"{rate:.17f}".rstrip("0").rstrip(".")
-    print(f"capacity={cap}  rate_per_sec={rate_str}")
+    cap = result["capacity"] if result["capacity"] is not None else "unlimited"
+    print(f"capacity={cap} rate_per_sec={result['rate_per_sec']}")
